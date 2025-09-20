@@ -1,0 +1,112 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading">
+    <image src="/assets/images/loading.gif"></image>
+    <text>AI正在为您定制多囊食谱...</text>
+  </view>
+  
+  <!-- 结构化结果显示 -->
+  <view wx:if="{{!loading && structuredRecipe}}" class="structured-result">
+    <!-- 热量建议卡片 -->
+    <view class="section-card">
+      <view class="section-header">
+        <image src="/assets/images/calorie-icon.png" class="section-icon" ></image>
+        <text class="section-title">总热量建议</text>
+      </view>
+      <view class="section-body">
+        <text class="intake-value">{{structuredRecipe.calorieAdvice.dailyIntake}}</text>
+        <view class="reasons-list">
+          <view wx:for="{{structuredRecipe.calorieAdvice.reasons}}" wx:key="index" class="reason-item">
+            <view class="reason-number">{{index + 1}}.</view>
+            <view class="reason-text">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 营养素分配卡片 -->
+    <view class="section-card">
+      <view class="section-header">
+        <image src="/assets/images/nutrient-icon.png" class="section-icon"></image>
+        <text class="section-title">三大营养素分配</text>
+      </view>
+      <view class="section-body">
+        <view class="nutrient-table">
+          <view class="table-header">
+            <view class="header-cell">营养素</view>
+            <view class="header-cell">比例</view>
+            <view class="header-cell">推荐食物</view>
+          </view>
+          <view wx:for="{{structuredRecipe.nutrientDistribution}}" wx:key="index" class="table-row">
+            <view class="table-cell nutrient-name">{{item.name}}</view>
+            <view class="table-cell nutrient-ratio">{{item.ratio}}</view>
+            <view class="table-cell nutrient-food">{{item.food}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 一日食谱卡片 -->
+    <view class="section-card">
+      <view class="section-header">
+        <image src="/assets/images/meal-icon.png" class="section-icon"></image>
+        <text class="section-title">一日食谱示例 (1500千卡)</text>
+      </view>
+      <view class="section-body">
+        <view wx:for="{{structuredRecipe.mealPlan}}" wx:key="index" class="meal-section">
+          <view class="meal-time">{{item.time}}</view>
+          
+          <!-- 菜品列表 -->
+          <view wx:for="{{item.items}}" wx:key="index" class="meal-item">
+            <view class="dish-name">{{item.name}}</view>
+            <view class="dish-ingredients">{{item.ingredients}}</view>
+          </view>
+          
+          <!-- 营养亮点 -->
+          <view wx:if="{{item.highlight}}" class="meal-highlight">
+            <view class="highlight-label">营养亮点：</view>
+            <view class="highlight-text">{{item.highlight}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 注意事项卡片 -->
+    <view class="section-card">
+      <view class="section-header">
+        <image src="/assets/images/warning-icon.png" class="section-icon"></image>
+        <text class="section-title">注意事项</text>
+      </view>
+      <view class="section-body">
+        <view wx:for="{{structuredRecipe.precautions}}" wx:key="index" class="precaution-item">
+          <view class="precaution-category">{{item.category}}：</view>
+          <view class="precaution-details">{{item.details}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 原始文本显示（备用） -->
+  <view wx:if="{{!loading && !structuredRecipe && recipe}}" class="recipe-content">
+    <text class="recipe-text">{{recipe}}</text>
+  </view>
+  
+  <!-- 错误提示 -->
+  <view wx:if="{{error}}" class="error">
+    <text>{{error}}</text>
+    <button class="retry-btn" bindtap="generateRecipeByAIAgent">重试</button>
+  </view>
+
+  <!-- 添加"吃别的"按钮 -->
+  <view class="action-buttons">
+    <button 
+      class="regenerate-btn" 
+      bindtap="regenerateRecipe"
+      loading="{{regenerating}}"
+      disabled="{{regenerating}}"
+    >
+      <block wx:if="{{regenerating}}">生成中...</block>
+      <block wx:else>吃别的</block>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<view class="container">
+  <!-- 顶部统计信息 -->
+  <view class="stats-container">
+    <view class="stat-box">
+      <text class="stat-value">{{averageCycle}}</text>
+      <text class="stat-label">平均周期(天)</text>
+    </view>
+    <view class="stat-box">
+      <text class="stat-value">{{averageDuration}}</text>
+      <text class="stat-label">平均经期(天)</text>
+    </view>
+    <view class="stat-box">
+      <text class="stat-value">{{records.length}}</text>
+      <text class="stat-label">记录次数</text>
+    </view>
+  </view>
+
+  <!-- 提醒区域 -->
+  <view class="reminder" wx:if="{{nextPeriodDate}}">
+    <image src="/assets/images/bell.png" class="reminder-icon"></image>
+    <view class="reminder-content">
+      <text class="reminder-title">月经提醒</text>
+      <text class="reminder-text">您的下一次月经预计在 {{nextPeriodDate}} 左右开始</text>
+    </view>
+  </view>
+
+  <!-- 记录表单 -->
+  <view class="form-container">
+    <text class="form-title">记录新周期</text>
+    <view class="input-group">
+      <view class="input-box">
+        <text class="input-label">开始日期</text>
+        <picker mode="date" value="{{startDate}}" bindchange="bindStartDateChange">
+          <view class="picker">{{startDate || '选择开始日期'}}</view>
+        </picker>
+      </view>
+      <view class="input-box">
+        <text class="input-label">结束日期</text>
+        <picker mode="date" value="{{endDate}}" bindchange="bindEndDateChange">
+          <view class="picker">{{endDate || '选择结束日期'}}</view>
+        </picker>
+      </view>
+    </view>
+    <button class="save-btn" bindtap="saveRecord">保存记录</button>
+  </view>
+
+  <!-- 时间轴 -->
+  <view class="timeline-container">
+    <text class="timeline-title">历史记录时间轴</text>
+    <scroll-view class="timeline" scroll-y>
+      <block wx:for="{{records}}" wx:key="index">
+        <view class="timeline-item">
+          <view class="period-date">{{item.startDate}} - {{item.endDate}}</view>
+          <view class="period-duration">经期时长: {{item.duration}}天</view>
+          <view class="cycle-length" wx:if="{{item.cycleLength}}">周期: {{item.cycleLength}}天</view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {},
+    "navigationBarTitleText": "月经周期记录",
+    "navigationBarBackgroundColor": "#FF69B4",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FFF0F5",
+    "enablePullDownRefresh": false
+  }

@@ -1,0 +1,162 @@
+/* pages/about/about.wxss */
+.container {
+  background-color: #FFF5F7;
+  min-height: 100vh;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部样式 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+  background: linear-gradient(to right, #FFB6C1, #FFC0CB);
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(255, 182, 193, 0.3);
+}
+
+.logo {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 30rpx;
+  background-color: white;
+  padding: 20rpx;
+}
+
+.app-name {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: white;
+  margin-top: 20rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.app-slogan {
+  font-size: 28rpx;
+  color: #FFF0F5;
+  margin-top: 10rpx;
+}
+
+/* 分区样式 */
+.section {
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 15rpx rgba(255, 182, 193, 0.2);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #FFE4E1;
+}
+
+.section-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FF69B4;
+}
+
+/* 应用信息样式 */
+.info-item {
+  margin-bottom: 25rpx;
+}
+
+.info-label {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FF69B4;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.info-value {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 团队介绍样式 */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #FFF0F5;
+  border-radius: 20rpx;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 5rpx solid #FFB6C1;
+  margin-bottom: 20rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FF69B4;
+  margin-bottom: 10rpx;
+}
+
+.role {
+  font-size: 30rpx;
+  color: #FFB6C1;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.bio {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 免责声明样式 */
+.disclaimer {
+  background-color: #FFF0F5;
+  border-radius: 15rpx;
+  padding: 25rpx;
+}
+
+.disclaimer-text {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+  line-height: 1.6;
+}
+
+/* 底部样式 */
+.footer {
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.copyright {
+  font-size: 26rpx;
+  color: #FF69B4;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.contact {
+  font-size: 26rpx;
+  color: #999;
+}

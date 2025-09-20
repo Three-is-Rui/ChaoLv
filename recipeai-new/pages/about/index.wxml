@@ -1,0 +1,67 @@
+<!-- pages/about/about.wxml -->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="/assets/images/logo.png" class="logo"></image>
+    <text class="app-name">多囊健康助手</text>
+    <text class="app-slogan">您的专属多囊健康管理伙伴</text>
+  </view>
+  
+  <!-- 应用信息 -->
+  <view class="section">
+    <view class="section-header">
+      <image src="/assets/images/icon_info.png" class="section-icon"></image>
+      <text class="section-title">应用信息</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">版本号</text>
+      <text class="info-value">v2.1.0</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">更新时间</text>
+      <text class="info-value">2025-9-15</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">开发者</text>
+      <text class="info-value">Rui</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">功能介绍</text>
+      <text class="info-value">多囊健康助手是一款专为多囊卵巢综合征(PCOS)患者设计的健康管理应用，提供个性化饮食建议、运动方案和健康追踪工具。</text>
+    </view>
+  </view>
+  
+  <!-- 开发团队 -->
+  <view class="section">
+    <view class="section-header">
+      <image src="/assets/images/icon_team.png" class="section-icon"></image>
+      <text class="section-title">开发团队</text>
+    </view>
+    <view class="team-card">
+      <image src="/assets/images/avatar.png" class="avatar"></image>
+      <text class="name">北京航空航天大学</text>
+      <text class="role">学生</text>     
+    </view>
+  </view>
+  
+  <!-- 免责声明 -->
+  <view class="section">
+    <view class="section-header">
+      <image src="/assets/images/warning-icon.png" class="section-icon"></image>
+      <text class="section-title">免责声明</text>
+    </view>
+    <view class="disclaimer">
+      <text class="disclaimer-text">1. 本应用提供的健康建议仅供参考，不能替代专业医疗诊断和治疗。</text>
+      <text class="disclaimer-text">2. 如果您有健康问题或疑虑，请咨询专业医生或医疗保健提供者。</text>
+      <text class="disclaimer-text">3. 本应用开发者对因使用本应用而产生的任何后果不承担责任。</text>
+      <text class="disclaimer-text">4. 用户应自行判断信息的适用性，并对使用该信息的结果负责。</text>
+      <text class="disclaimer-text">5. 本应用可能包含第三方内容，开发者不对这些内容的准确性负责。</text>
+    </view>
+  </view>
+  
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="copyright">© 2025 多囊健康助手 | 让健康管理更简单</text>
+    <text class="contact">联系我: 1192277588@qq.com</text>
+  </view>
+</view>

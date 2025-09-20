@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="slider-section">
+    <text>选择运动时长：{{sliderValue}}分钟</text>
+    <slider 
+      min="5" 
+      max="45" 
+      step="5" 
+      value="{{sliderValue}}" 
+      show-value="{{true}}"
+      active-color="#FF69B4"
+      bindchange="onSliderChange"
+    />
+  </view>
+  
+  <view class="generate-section">
+    <button bindtap="generateSport" >生成随机运动</button>
+  </view>
+  
+  <view class="result-section" wx:if="{{sportResult}}">
+    <text class="title">为您生成的运动计划：</text>
+    <text class="sport-name">{{sportResult.name}}</text>
+    <text class="sport-duration">时长：{{sportResult.duration}}分钟</text>
+    <text class="sport-description">描述：{{sportResult.description}}</text>
+  </view>
+</view>

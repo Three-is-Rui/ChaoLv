@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="banner">多囊健康管理助手</view>
+  
+  <!-- 用户信息输入区域 -->
+  <view class="form">
+    <input class="input" type="number" placeholder="年龄" model:value="{{age}}" bindinput="onAgeInput"/>
+    <input class="input" type="number" placeholder="身高 (cm)" model:value="{{height}}" bindinput="onHeightInput"/>
+    <input class="input" type="number" placeholder="体重 (kg)" model:value="{{weight}}" bindinput="onWeightInput"/>
+    <picker class="input" mode="selector" range="{{goals}}" bindchange="onGoalChange">
+      <view class="picker-text">{{goal || '请选择偏好方式'}}</view>
+    </picker>
+    <view class="bmi">BMI：{{bmi}}</view>
+  </view>
+  
+  <!-- 饮食推荐区域 -->
+  <button class="main-btn" bindtap="onRecommend">今日饮食</button>
+  <view wx:if="{{recipe}}">
+    <view class="result-title">AI推荐食谱</view>
+    <view class="result-content">{{recipe}}</view>
+  </view>
+  
+  <!-- 运动推荐区域 -->
+  <button class="main-btn" bindtap="goToExercise">今日运动</button>
+  <view wx:if="{{exercisePlan}}">
+    <view class="result-title">AI运动建议</view>
+    <view class="result-content">{{exercisePlan}}</view>
+  </view>
+  
+  <!-- 月经记录区域 -->
+  <button class="main-btn" bindtap="goToPeriod">月经记录</button>
+  <view wx:if="{{Period}}">
+    <view class="result-title">AI月经记录</view>
+    <view class="result-content">{{Period}}</view>
+  </view>
+  
+  <!-- 关于我们 -->
+  <view class="footer">
+    <button class="about-btn" bindtap="goToAbout">关于我们</button>
+  </view>
+</view>

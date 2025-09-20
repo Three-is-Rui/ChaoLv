@@ -1,0 +1,123 @@
+/**index.wxss**/
+page {
+  background: #FFF0F5;
+  height: 100%;
+  overflow-y: auto; /* 允许垂直滚动 */
+  -webkit-overflow-scrolling: touch; /* 可选：为iOS设备启用弹性滚动，提升手感 */
+}
+.container {
+  background: #FFF0F5;
+  min-height: 100vh;
+  padding: 40rpx 32rpx;
+}
+.banner {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #FF69B4;
+  margin-bottom: 40rpx;
+  margin-top: 60rpx;
+  text-align: center;
+}
+.form {
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 24rpx #E0E0E0;
+  padding: 40rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+.slogan {
+  font-size: 40rpx;
+  color: #FF69B4;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48rpx;
+}
+.form-item {
+  margin-bottom: 32rpx;
+}
+.label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+.input {
+  border: 1rpx solid #E0E0E0;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+  background: #fff;
+}
+.picker-text {
+  color: #888;
+}
+.bmi {
+  color: #FF69B4 ;
+  font-size: 32rpx;
+  text-align: right;
+}
+.main-btn {
+  background: #FF69B4;
+  color: #fff;
+  border-radius: 24rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 4rpx 12rpxrgb(197, 129, 199);
+  margin-top: -10rpx;
+}
+.bmi-block {
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx #E0E0E0;
+  padding: 24rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+.bmi-label {
+  color: #FF69B4;
+  font-size: 28rpx;
+}
+.bmi-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 0 8rpx;
+  color: #333;
+}
+.bmi-tip {
+  color: #888;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+}
+.result-title {
+  margin-top: 48rpx;
+  font-size: 36rpx;
+  color: #FF69B4;
+  font-weight: bold;
+}
+.result-content {
+  margin-top: 16rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  font-size: 30rpx;
+  color: #222;
+  box-shadow: 0 2rpx 8rpx #E0E0E0;
+  white-space: pre-wrap;
+}
+/* 首页底部样式 */
+.footer {
+  text-align: center;
+  padding: 30rpx 0;
+  margin-top: 50rpx;
+}
+
+.about-btn {
+  background-color: #FF69B4;
+  color: white;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  padding: 15rpx 40rpx;
+  box-shadow: 0 4rpx 10rpx #FFF0F5;
+}
